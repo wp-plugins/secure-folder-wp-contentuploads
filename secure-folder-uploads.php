@@ -31,8 +31,7 @@ $PLUGIN_VERSION = '1.0';
 $PLUGIN_PATH = WP_PLUGIN_URL.'/secure-folder-uploads';
 
 $empty_file = realpath( dirname( __FILE__ ) ) . '/index.html';
-$uploads = wp_upload_dir();
-$start_dir = $uploads['basedir'];
+$start_dir = wp_upload_dir(); 
 
 add_action( 'admin_menu', 'addPluginToSubmenu');
 
@@ -84,7 +83,7 @@ function initPluginMenu()
 		<br/>
 		You need to this manually every time you want (preferred once a month)
 		<br/><br/>
-		<a href='".$start_dir."'>Click here to check is your wp-content/uploads folder are open</a>
+		<a href='".$start_dir['baseurl']."'>Click here to check is your wp-content/uploads folder are open</a>
 		<br/>
 		If you can browse this folder using your browser, you need to secure this folder!
 		";
@@ -109,7 +108,7 @@ function secure_folder_uploads(){
 
 	global $start_dir;
 	
-	search_and_copy_to($start_dir);
+	search_and_copy_to($start_dir['basedir']);
 	
 }//eof secure_folder_uploads
 function search_and_copy_to($dir){
