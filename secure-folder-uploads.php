@@ -3,7 +3,7 @@
 Plugin Name: Secure Folder wp-content/uploads
 Plugin URI: http://ruanglaba.com/clients-center/plugins/wordpress-plugin-secure-folder-wp-contentuploads
 Description: Indonesia: Plugin ini akan menempatkan file index.html kosong di setiap folder dibawah wp-content/uploads untuk mencegah pencurian data. English: This is plugin will put empty index.html on every folders on wp-content/uploads to prevent content theft
-Version: 1.1
+Version: 1.2
 Author: SuplentonkJaya a/n RuangLaba
 Author URI: http://ruanglaba.com
 License: GPL2
@@ -31,6 +31,8 @@ $PLUGIN_VERSION = '1.0';
 $PLUGIN_PATH = WP_PLUGIN_URL.'/secure-folder-uploads';
 
 $empty_file = realpath( dirname( __FILE__ ) ) . '/index.html';
+$uploads = wp_upload_dir();
+$start_dir = $uploads['basedir'];
 
 add_action( 'admin_menu', 'addPluginToSubmenu');
 
@@ -46,7 +48,8 @@ function addPluginToSubmenu()
 
 function initPluginMenu()
 {
-
+	global $start_dir;
+	
 	if( $_POST['secure'] == 'Y' ) {
 
 		secure_folder_uploads();
@@ -56,7 +59,7 @@ function initPluginMenu()
 
 	}
 	echo '<div class="wrap">';
-	echo "<h2>" . __( 'Secure Folder Options', 'rl_secure_folder' ) . "</h2>";
+	echo "<h2>" . __( 'Secure Folder Options', 'rl_secure_option' ) . "</h2>";
 	?>
 	<form name="form1" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
 		<input type="hidden" name="secure" value="Y" />
@@ -80,6 +83,10 @@ function initPluginMenu()
 		This plugin works by put empty <strong>index.html</strong> file on every folder inside wp-content/uploads
 		<br/>
 		You need to this manually every time you want (preferred once a month)
+		<br/><br/>
+		<a href='".$start_dir."'>Click here to check is your wp-content/uploads folder are open</a>
+		<br/>
+		If you can browse this folder using your browser, you need to secure this folder!
 		";
 		?>
 		</label>
@@ -100,8 +107,9 @@ function initPluginMenu()
 
 function secure_folder_uploads(){
 
-	$uploads = wp_upload_dir();
-	search_and_copy_to($uploads['basedir']);
+	global $start_dir;
+	
+	search_and_copy_to($start_dir);
 	
 }//eof secure_folder_uploads
 function search_and_copy_to($dir){
