@@ -4,7 +4,7 @@ Donate link: http://ruanglaba.com/
 Tags: security, secure, hack, wp-content, uploads, files, content, protect, media
 Requires at least: 2.5
 Tested up to: 3.2
-Stable tag: 1.1
+Stable tag: 1.0
 
 This is simple plugin to protect your wp-content/uploads folder from being browse & copy
 
