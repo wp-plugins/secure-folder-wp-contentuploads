@@ -91,7 +91,7 @@ function initPluginMenu()
 
 	</form>
 
-<p>Everybody! If you like this plugin come give it a <a href="http://wordpress.org/extend/plugins/">good rating</a> on wordpress, or tell this on your sites!</p>
+<p>Mister mister and Miss and Misstress, if you like this plugin come give it a <a href="http://wordpress.org/extend/plugins/secure-folder-wp-contentuploads/">good rating</a> on wordpress, or tell this on your sites!</p>
 
 </div>
 	<?php
