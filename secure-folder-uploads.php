@@ -4,7 +4,7 @@ Plugin Name: Secure Folder wp-content/uploads
 Plugin URI: http://ruanglaba.com/clients-center/plugins/wordpress-plugin-secure-folder-wp-contentuploads
 Description: Indonesia: Plugin ini akan menempatkan file index.html kosong di setiap folder dibawah wp-content/uploads untuk mencegah pencurian data. English: This is plugin will put empty index.html on every folders on wp-content/uploads to prevent content theft
 Version: 1.2
-Author: SuplentonkJaya a/n RuangLaba
+Author: Daniel Satria a/n RuangLaba
 Author URI: http://ruanglaba.com
 License: GPL2
 

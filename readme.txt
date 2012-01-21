@@ -1,5 +1,5 @@
 === Secure Folder wp-content/uploads ===
-Contributors: SuplentonkJaya
+Contributors: Daniel Satria
 Donate link: http://ruanglaba.com/
 Tags: security, secure, hack, wp-content, uploads, files, content, protect, media
 Requires at least: 2.5
