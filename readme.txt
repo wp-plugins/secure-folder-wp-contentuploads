@@ -6,7 +6,7 @@ Requires at least: 2.5
 Tested up to: 3.2
 Stable tag: 1.2
 
-This is simple plugin to protect your wp-content/uploads folder from being browse & copy
+This is simple plugin to protect your wp-content/uploads folder from being browse & copy. Thanks for Irfan for the idea :p
 
 == Description ==
 Indonesia: Plugin ini akan menempatkan file index.html kosong di setiap folder dibawah wp-content/uploads untuk mencegah pencurian data. 
